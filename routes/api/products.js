@@ -35,3 +35,13 @@ app.get("/products/:id", (req, res)=>{
         return res.send(product)
     })
 })
+
+// Update product
+app.put('/products/:id', (req, res)=>{
+    Product.findById(req.params.id,req.body,{new:true}, (error, product)=>{
+        if(error){
+            return res.status(400).send(error)
+        }
+        return res.send(product)
+    })
+})
