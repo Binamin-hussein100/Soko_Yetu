@@ -65,3 +65,16 @@ app.get('/products/search/:name', (req, res)=>{
         return res.send(products)
     })
 })
+
+// search by category
+app.get ('/products/search/:categories', (req, res)=>{
+
+    const category = req.params.categories
+
+    Product.find({category},(error, products)=>{
+        if(error){
+            return res.status(400).send(error)
+        }
+        return res.send(products)
+    })
+})
