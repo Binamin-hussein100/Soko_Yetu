@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Product = require('./models/product');
 // express server
 const app = express();
 const port = 3000
@@ -8,10 +9,14 @@ app.use(express.json())
 
 // database connection
 mongoose.connect('mongodb://localhost/SokoSafi')
-    .then(()=>app.listen(3000))
+    .then(()=>{
+        console.log("successfully connected")
+        app.listen(3000)})
     .then((err)=>console.log(err))
+    
 app.get("/", (req, res)=>{
-    res.send("Trial")
+    res.send("trial")
+    console.log(Product)
 })
 
 
