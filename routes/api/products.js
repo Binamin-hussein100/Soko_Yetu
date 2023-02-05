@@ -45,3 +45,13 @@ app.put('/products/:id', (req, res)=>{
         return res.send(product)
     })
 })
+
+// Delete product
+app.delete('/products/:id', (req, res)=>{
+    Product.findById(req.params.id, (error, product)=>{
+        if(error){
+            return res.status(400).send(error)
+        }
+        return res.send(product)
+    })
+})
