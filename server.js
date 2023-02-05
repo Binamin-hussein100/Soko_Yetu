@@ -16,7 +16,6 @@ mongoose.connect('mongodb://localhost/SokoSafi')
     
 app.get("/", (req, res)=>{
     res.send("trial")
-    console.log(Product)
 })
 
 

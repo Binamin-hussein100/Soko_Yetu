@@ -25,3 +25,13 @@ app.get('/products',(req, res)=>{
         return res.send(product)
     })
 })
+
+// Get a single product
+app.get("/products/:id", (req, res)=>{
+    Product.findById(req.params.id, (error, product)=>{
+        if(error){
+            return res.status(400).send(error)
+        }
+        return res.send(product)
+    })
+})
