@@ -29,6 +29,14 @@ var ProductSchema = new mongoose.Schema({
             type: Number,
             min: 1,
             max:5
+        },
+        isFavorite: {
+            type: Boolean,
+            default: false
+        },
+        isCarted: {
+            type: Boolean,
+            default: false
         }
 
 });
