@@ -55,3 +55,13 @@ app.delete('/products/:id', (req, res)=>{
         return res.send(product)
     })
 })
+
+// Search by name
+app.get('/products/search/:name', (req, res)=>{
+    Product.find({name: {$regex: req.params.name, $options:'i'}},(error, products)=>{
+        if(error){
+            return res.status(400).send(error)
+        }
+        return res.send(products)
+    })
+})
