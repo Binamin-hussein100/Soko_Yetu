@@ -1,0 +1,79 @@
+
+// // Create a product
+// app.post('/',(req,res)=>{
+//     const newProduct = new Product(req.body);
+//     newProduct.save((error, product)=>{
+//         if(error){
+//             console.log("not yet")
+//             return res.status(400).send(error)
+//         }
+//         res.send(product)
+//     })
+// })
+
+// // Get all products
+// app.get('/products',async(req, res)=>{
+//     await Product.find({}, (error, product)=>{
+//         if(error){
+//             return res.status(400).send(error)
+//         }
+//         return res.send(product)
+//     })
+// })
+
+
+
+// // Get a single product
+// app.get("/products/:id", (req, res)=>{
+//     Product.findById(req.params.id, (error, product)=>{
+//         if(error){
+//             return res.status(400).send(error)
+//         }
+//         return res.send(product)
+//     })
+// })
+
+// // Update product
+// app.put('/products/:id', (req, res)=>{
+//     Product.findById(req.params.id,req.body,{new:true}, (error, product)=>{
+//         if(error){
+//             return res.status(400).send(error)
+//         }
+//         return res.send(product)
+//     })
+// })
+
+// // Delete product
+// app.delete('/products/:id', (req, res)=>{
+//     Product.findById(req.params.id, (error, product)=>{
+//         if(error){
+//             return res.status(400).send(error)
+//         }
+//         return res.send(product)
+//     })
+// })
+
+// // Search by name
+// app.get('/products/search/:name', (req, res)=>{
+//     Product.find({name: {$regex: req.params.name, $options:'i'}},(error, products)=>{
+//         if(error){
+//             return res.status(400).send(error)
+//         }
+//         return res.send(products)
+//     })
+// })
+
+// // search by category
+// app.get ('/products/search/:categories', (req, res)=>{
+
+//     const category = req.params.categories
+
+//     Product.find({category},(error, products)=>{
+//         if(error){
+//             return res.status(400).send(error)
+//         }
+//         return res.send(products)
+//     })
+// })
+
+// module.exports = app
