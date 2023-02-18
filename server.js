@@ -1,6 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const Product = require('./models/product');
 // const productRoutes = require('./routes/api/products')
 
 const dbConnection = require('./config/dbConfig');
