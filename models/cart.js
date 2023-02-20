@@ -3,7 +3,7 @@ const User  = require('./user')
 
 var cartSchema = new mongoose.Schema({
     user : {
-        type: Schema.Types.ObjectId, ref: User, required: true
+        type: Schema.Types.ObjectId, ref: 'User', required: true
     }
 });
 
