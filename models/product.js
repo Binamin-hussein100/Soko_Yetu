@@ -1,13 +1,33 @@
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
+let category = require('./category');
 
-const categories = ["Fruits", "Vegetables", "Grains", "Legumes", "Roots"]
 const varieties = ["Export", "Local retail", "Processing"]
 
-var ProductSchema = new mongoose.Schema({
+let ProductSchema = new mongoose.Schema({
+        name:{
+            type: "string",
+            required: true,
+        },
+        category:{
+            type: Schema.Types.ObjectId,
+            ref: category,
+            unique: true
+        },
+        from:{
+            type: "string",            
+        },
+        rating:{
+            type: "integer",
+            required: true
+        },
+        availability:{
+            type: Boolean,
+            default: false
+        },
         
 
 });
 
 const Product = mongoose.model('Products',ProductSchema,"products")
-console.log(Product)
+
 module.exports = Product
