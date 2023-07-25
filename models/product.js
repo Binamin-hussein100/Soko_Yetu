@@ -24,6 +24,10 @@ let ProductSchema = new mongoose.Schema({
             type: Boolean,
             default: false
         },
+        varieties:{
+            type: "string",
+            enum: varieties
+        }
         
 
 });
