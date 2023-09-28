@@ -1,4 +1,5 @@
 let mongoose = require('mongoose');
+let cart = require('./cart');
 
 let role = ["admin", "user"]
 
@@ -21,6 +22,11 @@ let UserSchema = new mongoose.Schema({
     password: {
         type: 'password',
         required: true
+    },
+    cart: {
+        type: Schema.Type.ObjectId,
+        ref: cart,
+        unique: true
     }
 
 }); 
