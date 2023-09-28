@@ -2,16 +2,18 @@ let mongoose = require('mongoose');
 let user = require('./user');
 let product = require('./product');
 
+const Schema = mongoose.Schema;
 
-let CartSchema = new mongoose.Schema({
+
+let CartSchema = new Schema({
     user_id:{
-        type:Schema.Type.ObjectId,
-        ref:user,
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         unique:true
     },
     product_id:{
-        type:Schema.Type.ObjectId,
-        ref:product
+        type:Schema.Types.ObjectId,
+        ref: 'Product'
     }
 })
 

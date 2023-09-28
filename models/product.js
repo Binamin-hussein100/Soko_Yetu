@@ -9,7 +9,7 @@ let ProductSchema = new mongoose.Schema({
             required: true,
         },
         category:{
-            type: Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: category,
             unique: true
         },
@@ -17,7 +17,7 @@ let ProductSchema = new mongoose.Schema({
             type: "string",            
         },
         rating:{
-            type: "integer",
+            type: "Number",
             required: true
         },
         availability:{
@@ -32,6 +32,6 @@ let ProductSchema = new mongoose.Schema({
 
 });
 
-const Product = mongoose.model('Products',ProductSchema,"products")
+const Product = mongoose.model('Products',ProductSchema)
 
 module.exports = Product
