@@ -23,7 +23,13 @@ let UserSchema = new mongoose.Schema({
         type: 'string',
         required: true
     },
-    
+
+    cart: {
+        type: Schema.Type.ObjectId,
+        ref: cart,
+        unique: true
+    }
+
 
 }); 
 
